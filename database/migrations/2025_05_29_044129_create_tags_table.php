@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique()->comment('Tag name'); // Adding a comment for clarity
+            $table->string('slug')->unique()->comment('URL-friendly version of the tag name'); // Adding a comment for clarity
+            $table->timestamp('timestamp')->nullable()->comment('Timestamp for the tag, if needed'); // Adding a comment for clarity
             $table->timestamps();
         });
     }
