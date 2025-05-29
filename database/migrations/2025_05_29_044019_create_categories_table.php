@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique()->comment('Category name'); // Adding a comment for clarity
             $table->string('slug')->unique()->comment('URL-friendly version of the category name');
-            $table->text('description')->nullable()->comment('Description of the category');
-            $table->timestamp('timestamp')->nullable()->comment('Timestamp for the category, if needed');
+            $table->string('description')->nullable()->comment('Description of the category');
             $table->timestamps();
         });
     }

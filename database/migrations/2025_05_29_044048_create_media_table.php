@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('url')->unique()->comment('URL where the media file is stored'); // Adding a comment for clarity
             $table->timestamp('uploaddate_date')->nullable()->comment('Date when the media file was uploaded'); // Adding a comment for clarity
             $table->string('description')->nullable()->comment('Description of the media file'); // Adding a comment for clarity
-            $table->timestamps();
         });
     }
 

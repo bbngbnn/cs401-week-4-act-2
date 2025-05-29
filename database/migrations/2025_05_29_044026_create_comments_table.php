@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name')->comment('Name of the commenter'); // Adding a comment for clarity
             $table->string('email')->comment('Email of the commenter'); // Adding a comment for clarity
             $table->boolean('ishidden')->default(false)->comment('Indicates if the comment is hidden'); // Adding a comment for clarity
-            $table->timestamps();
         });
     }
 
