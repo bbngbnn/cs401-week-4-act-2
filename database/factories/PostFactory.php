@@ -16,13 +16,15 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $status = fake()->randomElement(['D', 'P', 'I']);
+        $title = fake()->title();
         return [
             "title" => fake()->title(),
             "content" => fake()->paragraph(),
-            "slug" => '',
-            "publication_date" => '',
-            "status" => '',
-            "featured_image_url" => ''
+            "slug" => Str::slug($title),
+            "publication_date" => $status == 'P' ? now() : null,
+            "status" => $status,
+            "featured_image_url" => fake()->imageUrl(640, 480, 'animals', true)
         ];
     }
 }
